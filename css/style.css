@@ -1,0 +1,152 @@
+/* навігація. ховер */
+.tm-nav-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* позиціонування фото біля тексту, ст.1 */
+.tm-content-box.flex-2-col:first-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* наведення ховера на блоки з текстом */
+.tm-box-bg-title:hover {
+  color: #fff;
+  font-weight: bold;
+  background-color: lightskyblue;
+}
+
+/* перша літера в кожному тегу <p> синя, за вийнятком двох блоків */
+p::first-letter {
+  font-size: 30px;
+  color: #87cefa;
+}
+.box-work p::first-letter {
+  color: black;
+}
+
+.blocks p::first-letter {
+  color: black;
+}
+/* щоб не було абзаців на початку речення (відступ) */
+.blocks .box-work p {
+  text-indent: 0;
+}
+
+/* Перший абзац після кожного H2 міняємо на італік і добавляємо абзац на початку речення (відступ) */
+h2 + p {
+  font-style: italic;
+}
+
+p {
+  text-indent: 20px;
+}
+
+/* щоб не було абзаців на початку речення */
+#home p {
+  text-indent: 0;
+}
+
+/* стилізація списку розділу WE ARE... */
+.heading li a:visited {
+  text-decoration: underline;
+}
+
+.heading li a:hover {
+  color: lightskyblue;
+  text-decoration: underline double;
+}
+
+.heading .text::after {
+  content: "New";
+  color: red;
+  vertical-align: super;
+  font-size: 8px;
+}
+
+a {
+  color: black;
+}
+
+/* відстані між блоками з книжкою */
+.box-work {
+  padding: 10px;
+}
+
+/* сірий фон на кожен другий блок з книжкою */
+.box-work:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* зміна стілів HOW WE DO IT */
+.active h2 {
+  color: gainsboro;
+  letter-spacing: 5px;
+}
+
+/* наведення тіні на блоки */
+section,
+.tm-content-header,
+.tm-main-nav {
+  box-shadow: 0 0 6px 4px rgb(180, 180, 180);
+}
+
+/* трикутник */
+section::before {
+  content: "";
+  border-style: solid;
+  border-width: 30px 200px 0 0;
+  border-color: lightskyblue transparent transparent transparent;
+}
+
+/* зірочка в емейлі */
+.mandatory-field::after {
+  content: "*";
+  color: red;
+  font-weight: bold;
+}
+
+/* стилізація кнопки */
+.btn-primary {
+  background-color: #fff;
+  border-color: lightskyblue;
+  color: lightskyblue;
+  border-radius: 0;
+}
+
+.btn-primary:hover {
+  background-color: lightskyblue;
+  color: #fff;
+}
+
+.submit-btn {
+  display: block;
+  margin-left: auto;
+}
+
+/* принт версія */
+@media print {
+  .tm-sidebar,
+  #about,
+  .blocks,
+  #ideas,
+  section.tm-content-box,
+  section::before {
+    display: none;
+  }
+
+  #home {
+    margin-top: 20px;
+  }
+
+  h2.tm-section-title {
+    color: blue;
+  }
+
+  .flex-item img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+  }
+}
